@@ -1,0 +1,524 @@
+[
+  {
+    "id": 1,
+    "name": "老母鸡汤面一桶半",
+    "price": 5.5,
+    "stock": 521,
+    "order": 4,
+    "hidden": false,
+    "color": "#00ffff"
+  },
+  {
+    "id": 2,
+    "name": "葱香排骨面一桶半",
+    "price": 5.5,
+    "stock": 100,
+    "order": 7,
+    "hidden": false,
+    "color": "#00ffff"
+  },
+  {
+    "id": 3,
+    "name": "酸酸辣辣豚骨汤面一桶半",
+    "price": 5.5,
+    "stock": 100,
+    "order": 3,
+    "hidden": false,
+    "color": "#00ffff"
+  },
+  {
+    "id": 4,
+    "name": "粉面菜蛋番茄牛腩味",
+    "price": 6.5,
+    "stock": 100,
+    "order": 20,
+    "hidden": false,
+    "color": "#00ffff"
+  },
+  {
+    "id": 5,
+    "name": "粉面菜蛋诱惑酸麻味",
+    "price": 6.5,
+    "stock": 100,
+    "order": 21,
+    "hidden": false,
+    "color": "#00ffff"
+  },
+  {
+    "id": 7,
+    "name": "火腿肠",
+    "price": 1.5,
+    "stock": 50,
+    "order": 32,
+    "hidden": false,
+    "color": "#dfff00"
+  },
+  {
+    "id": 8,
+    "name": "卤蛋",
+    "price": 1.5,
+    "stock": 100,
+    "order": 31,
+    "hidden": false,
+    "color": "#dfff00"
+  },
+  {
+    "id": 9,
+    "name": "卫龙",
+    "price": 3,
+    "stock": 50,
+    "order": 39,
+    "hidden": false,
+    "color": "#e100ff"
+  },
+  {
+    "id": 10,
+    "name": "香辣花生",
+    "price": 4.5,
+    "stock": 30,
+    "order": 43,
+    "hidden": false,
+    "color": "#7cfc00"
+  },
+  {
+    "id": 11,
+    "name": "八爪烧两袋（麻辣味+酱爆肉味）",
+    "price": 2.5,
+    "stock": 100,
+    "order": 56,
+    "hidden": false,
+    "color": "#fa8072"
+  },
+  {
+    "id": 12,
+    "name": "八爪烧两袋（麻辣味*2）",
+    "price": 2.5,
+    "stock": 60,
+    "order": 55,
+    "hidden": false,
+    "color": "#fa8072"
+  },
+  {
+    "id": 13,
+    "name": "八爪烧两袋（酱爆肉味*2）",
+    "price": 2.5,
+    "stock": 100,
+    "order": 57,
+    "hidden": false,
+    "color": "#fa8072"
+  },
+  {
+    "id": 14,
+    "name": "冰红茶1000ml",
+    "price": 5,
+    "stock": 100,
+    "order": 60,
+    "hidden": false,
+    "color": "#7df9ff"
+  },
+  {
+    "id": 15,
+    "name": "青梅绿茶1000ml",
+    "price": 5,
+    "stock": 100,
+    "order": 61,
+    "hidden": false,
+    "color": "#7df9ff"
+  },
+  {
+    "id": 16,
+    "name": "矿泉水1500ml",
+    "price": 2,
+    "stock": 20,
+    "order": 62,
+    "hidden": false,
+    "color": "#7df9ff"
+  },
+  {
+    "id": 17,
+    "name": "重庆小面一桶半",
+    "price": 5.5,
+    "stock": 12,
+    "order": 12,
+    "hidden": false,
+    "color": "#00ffff"
+  },
+  {
+    "id": 19,
+    "name": "虾扯蛋*2",
+    "price": 1.5,
+    "stock": 100,
+    "order": 35,
+    "hidden": false,
+    "color": "#dfff00"
+  },
+  {
+    "id": 20,
+    "name": "老坛酸菜一桶半",
+    "price": 5.5,
+    "stock": 24,
+    "order": 9,
+    "hidden": false,
+    "color": "#00ffff"
+  },
+  {
+    "id": 21,
+    "name": "印度飞饼",
+    "price": 1,
+    "stock": 100,
+    "order": 34,
+    "hidden": false,
+    "color": "#dfff00"
+  },
+  {
+    "id": 22,
+    "name": "泡椒猪皮*2",
+    "price": 1.5,
+    "stock": 2,
+    "order": 36,
+    "hidden": false,
+    "color": "#dfff00"
+  },
+  {
+    "id": 23,
+    "name": "素牛肉黑椒味",
+    "price": 1,
+    "stock": 60,
+    "order": 49,
+    "hidden": false,
+    "color": "#00a36c"
+  },
+  {
+    "id": 24,
+    "name": "素牛肉黑鸭味",
+    "price": 1,
+    "stock": 60,
+    "order": 50,
+    "hidden": false,
+    "color": "#00a36c"
+  },
+  {
+    "id": 25,
+    "name": "素牛肉香辣味",
+    "price": 1,
+    "stock": 60,
+    "order": 48,
+    "hidden": false,
+    "color": "#00a36c"
+  },
+  {
+    "id": 26,
+    "name": "干脆面北极深海甜虾味",
+    "price": 1,
+    "stock": 40,
+    "order": 54,
+    "hidden": false,
+    "color": "#96ded1"
+  },
+  {
+    "id": 27,
+    "name": "干脆面蜜汁猪排味",
+    "price": 1,
+    "stock": 40,
+    "order": 52,
+    "hidden": false,
+    "color": "#96ded1"
+  },
+  {
+    "id": 28,
+    "name": "干脆面销魂黑鸭味",
+    "price": 1,
+    "stock": 40,
+    "order": 51,
+    "hidden": false,
+    "color": "#96ded1"
+  },
+  {
+    "id": 29,
+    "name": "干脆面奥尔良鸡翅味",
+    "price": 1,
+    "stock": 1,
+    "order": 53,
+    "hidden": false,
+    "color": "#96ded1"
+  },
+  {
+    "id": 30,
+    "name": "红烧牛肉面一桶半",
+    "price": 5.5,
+    "stock": 24,
+    "order": 6,
+    "hidden": false,
+    "color": "#00ffff"
+  },
+  {
+    "id": 31,
+    "name": "可乐888ml",
+    "price": 5,
+    "stock": 36,
+    "order": 59,
+    "hidden": false,
+    "color": "#7df9ff"
+  },
+  {
+    "id": 32,
+    "name": "可乐500ml",
+    "price": 3.5,
+    "stock": 72,
+    "order": 58,
+    "hidden": false,
+    "color": "#7df9ff"
+  },
+  {
+    "id": 34,
+    "name": "鲜虾鱼板面一桶半",
+    "price": 5.5,
+    "stock": 12,
+    "order": 8,
+    "hidden": false,
+    "color": "#00ffff"
+  },
+  {
+    "id": 35,
+    "name": "藤椒牛肉面一桶半",
+    "price": 5.5,
+    "stock": 24,
+    "order": 13,
+    "hidden": false,
+    "color": "#00ffff"
+  },
+  {
+    "id": 36,
+    "name": "泡椒牛肉面一桶半",
+    "price": 5.5,
+    "stock": 12,
+    "order": 14,
+    "hidden": false,
+    "color": "#00ffff"
+  },
+  {
+    "id": 37,
+    "name": "卤肉面（卤香牛肉面）",
+    "price": 5,
+    "stock": 1,
+    "order": 2,
+    "hidden": false,
+    "color": "#00ffff"
+  },
+  {
+    "id": 38,
+    "name": "金汤肥牛一桶半",
+    "price": 5.5,
+    "stock": 48,
+    "order": 5,
+    "hidden": false,
+    "color": "#00ffff"
+  },
+  {
+    "id": 39,
+    "name": "麻辣牛肉面一倍半",
+    "price": 5.5,
+    "stock": 24,
+    "order": 15,
+    "hidden": false,
+    "color": "#00ffff"
+  },
+  {
+    "id": 40,
+    "name": "粉面菜蛋藤椒沸腾鱼味",
+    "price": 6.5,
+    "stock": 24,
+    "order": 22,
+    "hidden": false,
+    "color": "#00ffff"
+  },
+  {
+    "id": 41,
+    "name": "鹅肝（五香味）",
+    "price": 1,
+    "stock": 40,
+    "order": 30,
+    "hidden": false,
+    "color": "#dfff00"
+  },
+  {
+    "id": 42,
+    "name": "西红柿打卤面一桶半",
+    "price": 5.5,
+    "stock": 48,
+    "order": 11,
+    "hidden": false,
+    "color": "#00ffff"
+  },
+  {
+    "id": 43,
+    "name": "鹅肝（香辣味）",
+    "price": 1,
+    "stock": 100,
+    "order": 29,
+    "hidden": false,
+    "color": "#dfff00"
+  },
+  {
+    "id": 44,
+    "name": "泡椒鸡肘",
+    "price": 1.5,
+    "stock": 100,
+    "order": 44,
+    "hidden": false,
+    "color": "#ba76fe"
+  },
+  {
+    "id": 45,
+    "name": "凤爪（泡椒味）",
+    "price": 1,
+    "stock": 100,
+    "order": 45,
+    "hidden": false,
+    "color": "#ba76fe"
+  },
+  {
+    "id": 46,
+    "name": "凤爪（香酥味）",
+    "price": 1,
+    "stock": 100,
+    "order": 46,
+    "hidden": false,
+    "color": "#ba76fe"
+  },
+  {
+    "id": 47,
+    "name": "布丁350ml",
+    "price": 4,
+    "stock": 2,
+    "order": 27,
+    "hidden": false,
+    "color": "#ffd666"
+  },
+  {
+    "id": 48,
+    "name": "南京板鸭*2",
+    "price": 1.5,
+    "stock": 100,
+    "order": 37,
+    "hidden": false,
+    "color": "#dfff00"
+  },
+  {
+    "id": 49,
+    "name": "鸡腿",
+    "price": 3.5,
+    "stock": 50,
+    "order": 47,
+    "hidden": false,
+    "color": "#ba76fe"
+  },
+  {
+    "id": 50,
+    "name": "小卫龙*2",
+    "price": 1,
+    "stock": 50,
+    "order": 40,
+    "hidden": false,
+    "color": "#e100ff"
+  },
+  {
+    "id": 52,
+    "name": "冰梅",
+    "price": 1,
+    "stock": 1,
+    "order": 28,
+    "hidden": false,
+    "color": "#dfff00"
+  },
+  {
+    "id": 53,
+    "name": "脆皮虾*2",
+    "price": 1.5,
+    "stock": 80,
+    "order": 38,
+    "hidden": false,
+    "color": "#dfff00"
+  },
+  {
+    "id": 54,
+    "name": "麻辣排骨一桶半",
+    "price": 5.5,
+    "stock": 100,
+    "order": 16,
+    "hidden": false,
+    "color": "#00ffff"
+  },
+  {
+    "id": 55,
+    "name": "茄皇（番茄牛肉）",
+    "price": 6,
+    "stock": 12,
+    "order": 19,
+    "hidden": false,
+    "color": "#00ffff"
+  },
+  {
+    "id": 56,
+    "name": "茄皇（番茄鸡蛋）",
+    "price": 6,
+    "stock": 12,
+    "order": 17,
+    "hidden": false,
+    "color": "#00ffff"
+  },
+  {
+    "id": 57,
+    "name": "牛板筋（辣条）",
+    "price": 3,
+    "stock": 100,
+    "order": 41,
+    "hidden": false,
+    "color": "#e100ff"
+  },
+  {
+    "id": 58,
+    "name": "花椒锅巴",
+    "price": 5,
+    "stock": 100,
+    "order": 42,
+    "hidden": false,
+    "color": "#7cfc00"
+  },
+  {
+    "id": 59,
+    "name": "促销（香辣花生）",
+    "price": 4,
+    "stock": 24,
+    "order": 24,
+    "hidden": false,
+    "color": "#ff0000"
+  },
+  {
+    "id": 60,
+    "name": "促销（花椒锅巴）",
+    "price": 4.5,
+    "stock": 1,
+    "order": 25,
+    "hidden": false,
+    "color": "#ff0000"
+  },
+  {
+    "id": 61,
+    "name": "促销（卫龙）",
+    "price": 2.5,
+    "stock": 30,
+    "order": 26,
+    "hidden": false,
+    "color": "#ff0000"
+  },
+  {
+    "id": 62,
+    "name": "促销（卤蛋）",
+    "price": 1,
+    "stock": 50,
+    "order": 23,
+    "hidden": false,
+    "color": "#ff0000"
+  }
+]
