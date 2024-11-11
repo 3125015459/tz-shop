@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XXX商店购物清单</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 0px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow-x: hidden;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .remarks {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #555;
+            padding: 15px;
+            margin-left:10px;
+            margin-right:10px;
+            /* 增加内边距 */
+            background-color: #e7f3fe;
+            border-left: 5px solid #2196F3;
+            border-radius: 5px;
+            /* 圆角 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* 添加阴影效果 */
+            transition: transform 0.2s;
+            /* 添加过渡效果 */
+        }
+
+        .remarks:hover {
+            transform: scale(1.02);
+            /* 鼠标悬停时稍微放大 */
+        }
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            word-break: break-word;
+        }
+
+        th {
+            background-color: #2196F3;
+            color: #fff;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            background-color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        td:hover {
+            background-color: #f1f1f1;
+        }
+
+        .total-section {
+            background-color: #e0e0e0;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 10px;
+            border-top: 2px solid #2196F3;
+            border-radius: 8px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px 12px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #2196F3;
+            color: white;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button:hover {
+            background-color: #1976D2;
+        }
+
+        #hiddenInput {
+            position: absolute;
+            left: -9999px;
+        }
+
+        @media (max-width: 600px) {
+
+            th,
+            td {
+                font-size: 12px;
+            }
+
+            .total-section {
+                font-size: 16px;
+            }
+
+            button {
+                font-size: 14px;
+            }
+        }
+
+        .beizhu {
+            font-size: 5px;
+            /* 设置字体大小 */
+            color: #555;
+            /* 设置文本颜色 */
+            margin: 15px;
+            /* 设置外边距 */
+            margin-bottom: 2px;
+            text-align: center;
+            /* 文本居中 */
+            background-color: rgba(255, 255, 255, 0.8);
+            /* 半透明背景 */
+            padding: 10px;
+            /* 内边距 */
+            border-radius: 8px;
+            /* 圆角边框 */
+        }
+
+        .beizhu-link {
+            color: #2196F3;
+            /* 设置链接颜色 */
+            text-decoration: underline;
+            /* 下划线 */
+            font-weight: bold;
+            /* 加粗 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .beizhu-link:hover {
+            color: #1976D2;
+            /* 悬停时的颜色 */
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>唐职306D</h2>
+        <div class="remarks" id="remarksSection">
+            <p><strong>备注：</strong></p>
+            <p id="remarksContent">加载中...</p>
+        </div>
+
+        <table id="productTable">
+            <tr>
+                <th>名称</th>
+                <th>单价</th>
+                <th>库存</th>
+                <th>数量</th>
+                <th>+</th>
+                <th>-</th>
+            </tr>
+        </table>
+
+        <div class="total-section">
+            <div id="cartDetails">此处为所选商品及个数</div>
+            <br>
+            <strong>总金额：<span id="totalPrice">0</span> 元</strong>
+            <br>
+            <button id="copyButton">复制内容</button>
+        </div>
+
+        <textarea id="hiddenInput" readonly></textarea>
+
+        <div class="beizhu">
+            主域名备案号 <a class="beizhu-link" href="https://beian.miit.gov.cn">冀ICP备xxxxxxx号-x</a><br>
+            &copy; 2024 306D商店. 版权所有. <br>
+            本站所有内容未经许可，不得转载。
+        </div>
+    </div>
+
+    <script>
+        let cart = {};
+        let products = [];
+
+        async function fetchProducts() {
+            try {
+                const response = await fetch('http://localhost:3000/products');
+                if (!response.ok) throw new Error('网络错误，无法获取商品数据');
+
+                products = await response.json();
+                populateTable(products);
+            } catch (error) {
+                console.error('获取商品数据失败:', error);
+                alert('无法加载商品数据，请检查网络或服务器状态。');
+            }
+        }
+
+        function populateTable(products) {
+            const table = document.getElementById('productTable');
+            products.forEach(product => {
+                if (!product.hidden) {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td style="background-color: ${product.color};">${product.name}</td>
+                        <td>¥${product.price}</td>
+                        <td id="stock-${product.id}">${product.stock}</td>
+                        <td id="quantity-${product.id}">0</td>
+                        <td><button id="increase-${product.id}" onclick="increaseQuantity(${product.id}, ${product.price})">+</button></td>
+                        <td><button id="decrease-${product.id}" onclick="decreaseQuantity(${product.id}, ${product.price})">-</button></td>
+                    `;
+                    table.appendChild(row);
+                }
+            });
+        }
+
+        function increaseQuantity(id, price) {
+            const product = products.find(p => p.id === id);
+            if (product.stock > 0) {
+                cart[id] = (cart[id] || 0) + 1;
+                product.stock -= 1;
+                updateCart();
+                updateButtonColor(id);
+            } else {
+                alert('库存不足');
+            }
+        }
+
+        function decreaseQuantity(id, price) {
+            const product = products.find(p => p.id === id);
+            if (cart[id] && cart[id] > 0) {
+                cart[id] -= 1;
+                product.stock += 1;
+
+                const productRow = document.getElementById(`quantity-${id}`);
+                productRow.innerText = cart[id];
+
+                if (cart[id] === 0) {
+                    delete cart[id];
+                    productRow.innerText = 0;
+                }
+
+                updateCart();
+                updateButtonColor(id);
+            }
+        }
+
+        function updateButtonColor(id) {
+            const quantityElement = document.getElementById(`quantity-${id}`);
+            const quantity = parseInt(quantityElement.innerText);
+            const increaseButton = document.getElementById(`increase-${id}`);
+            increaseButton.style.backgroundColor = quantity > 0 ? 'green' : '#2196F3';
+        }
+
+        function updateCart() {
+            let total = 0;
+            const cartDetails = document.getElementById('cartDetails');
+            cartDetails.innerHTML = ''; // 清空现有内容
+
+            Object.keys(cart).forEach(id => {
+                const quantity = cart[id];
+                const product = products.find(p => p.id == id);
+                const price = product.price * quantity;
+                total += price;
+
+                // 检查数量是否大于等于2
+                // 检查数量是否大于等于2
+                const exclamationMarks = quantity >= 2 ? `&emsp;老板注意:${quantity}份！` : ''; // 根据数量决定是否添加提示
+                cartDetails.innerHTML += `${product.name} x ${quantity}个 = ${price}元${exclamationMarks}<br>`;
+
+                document.getElementById(`quantity-${id}`).innerText = quantity;
+                document.getElementById(`stock-${id}`).innerText = product.stock;
+            });
+
+            document.getElementById('totalPrice').innerText = total;
+        }
+
+
+        document.getElementById('copyButton').onclick = function () {
+            const content = document.getElementById('cartDetails').innerText + `\n总金额：${document.getElementById('totalPrice').innerText} 元\n@A店长（收款）`;
+            const hiddenInput = document.getElementById('hiddenInput');
+            hiddenInput.value = content;
+            hiddenInput.select();
+
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    alert('内容已复制到剪贴板！');
+                } else {
+                    alert('复制失败，请手动复制。');
+                }
+            } catch (err) {
+                console.error('复制失败:', err);
+                alert('复制失败，请手动复制。');
+            }
+        };
+
+        async function fetchRemarks() {
+            try {
+                const response = await fetch('http://localhost:3000/remarks');
+                if (!response.ok) throw new Error('无法加载备注');
+                const data = await response.json();
+                document.getElementById('remarksContent').innerHTML = data.remarks || '暂无备注';
+            } catch (error) {
+                console.error('加载备注失败:', error);
+                document.getElementById('remarksContent').innerText = '加载备注失败';
+            }
+        }
+
+        async function checkStatus() {
+    const response = await fetch('http://localhost:3000/status');
+    const data = await response.json();
+
+    if (data.status === 'closed') {
+        // 如果未营业，并显示未营业原因
+        const reason = data.reason ? data.reason : '无原因';
+        alert(`未营业\n${reason}`); // 使用 \n 实现换行
+    }
+}
+
+
+
+        window.onload = checkStatus;
+
+        fetchProducts();
+        fetchRemarks();
+    </script>
+
+</body>
+
+</html>
